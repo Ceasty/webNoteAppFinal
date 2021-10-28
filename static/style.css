@@ -1,0 +1,114 @@
+
+.navbar{
+
+	position: relative;
+	background: #131313;
+	padding: 1rem 8rem;
+}
+
+.navbar .navbar-brand{
+
+	font-family:'Poppins', sans-serif;
+	font-size: 1.4rem;
+	font-weight: 700;
+}
+
+#navbarSupportedContent > ul > li:nth-child(n) > a{
+	color: #fff;
+	font-size: 1.1rem;
+	padding: 0 0.8rem;
+}
+
+#navbarSupportedContent > ul > li:nth-child(n) > a:hover{
+	color: #00BF85;
+}
+
+#navbarSupportedContent > a{
+	background : #00BF85;
+	font-weight: 600;
+	padding: 0.4rem 1.4rem;
+	border-radius: 30px;
+}
+
+.carousel-caption{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.carousel-caption h1{
+	font-size: 500%;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 15px #000;
+}
+
+.carousel-caption h3{
+	font-size: 200%;
+	font-weight: 400;
+	text-shadow: 1px 1px 10px #000;
+	padding-bottom: 1rem;
+}
+.carousel-caption span{
+	font-weight: 700;
+}
+
+
+.cekappnote {
+	background:#000;
+}
+.cekappnote .text{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin: auto;
+
+}
+
+.cekappnote .text h6{
+	color: #00BF7F;
+	font-weight: 8000;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+
+.cekappnote .text h2{
+	color: #F7F5F4;
+	font-weight: 700;
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+}
+.cekappnote .text p{
+	color: #F7F5F4;
+	font-weight: 400;
+	font-size: 1.1rem;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+}
+.my-button {
+	text-transform: uppercase;
+	border-radius: 40px;
+
+}
+
+footer {
+	background-color: #3f3f3f;
+	color: #d5d5d5;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+hr.light{
+	border-top: 1px solid #d5d5d5;
+	width: 75%;
+}
+.naga {
+
+	background: #C4C4C4;
+	padding-top: 10px;
+	padding-bottom: 35px;
+}
+
+.nagabonar{
+	background-color: #C4C4C4;
+}

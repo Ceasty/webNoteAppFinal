@@ -1,0 +1,93 @@
+{% extends 'layout.html' %}
+{% block title %}Create Note{% endblock %}
+
+{% block body %}
+	<section class="content">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 mt-3">
+					<div class="border border-secondary mb-3">
+					<form action="" method="POST">
+						<fieldset>
+							<legend class="mr-3 ml-3">
+								Add Note
+							</legend>
+
+							<div class="form-group mr-3 ml-3">
+								<input class="form-control" type="text" name="title" placeholder="Title" required>
+							</div>
+
+							<div class="form-group mr-3 ml-3">
+								<textarea class="form-control" type="text" name="note" placeholder="Leave your note here . . ." rows="10" required></textarea>
+							</div>
+						</fieldset>
+						<div class="form-group mr-3 ml-3 ">
+							<button style="border-radius:25px" class="btn btn-primary">Add Note</button>
+						</div>
+					</form>
+					</div>
+				</div>
+				<div class="col-5">
+					{% if notes %}
+					<h4 class="mb-3 mt-3">{{ login_user['first_name'] }} Notes</h4>
+					{% for note in notes %}
+					<div class="card mb-2">
+						<div class="card-body">
+							<strong style="font-size: 20px;">{{ note.Note.title[0:40]}}
+								{% if (note.Note.title)|length > 40 %}
+										<a href="{{url_for('more', note_id=note.Note.id)}}">...</a>
+							{% endif %}</strong>
+
+								<button style="border-radius:25px" class="btn btn-sm btn-danger float-right ml-2" data-toggle="modal" data-target="#exampleModal">Delete</button>
+
+								<a style="border-radius:25px" class="btn btn-sm btn-warning float-right" href="{{url_for('edit', note_id=note.Note.id)}}">Edit</a>
+
+
+
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				  <div class="modal-dialog">
+				    <div class="modal-content">
+				      <div class="modal-header">
+				        <h5 class="modal-title" id="exampleModalLabel">Are you sure to delete?</h5>
+				        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				          <span aria-hidden="true">&times;</span>
+				        </button>
+				      </div>
+				      <div class="modal-body">
+				        Once the file is deleted 
+				        <div class="text-danger">it's not possible  recover it in any means.</div>
+				        <br>
+				        Click Delete button below if you are sure to delete the note.
+				      </div>
+				      <div class="modal-footer">
+				        <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+				        <a class="btn btn-danger" href="{{url_for('delete', note_id=note.Note.id)}}">Delete</a>
+				      </div>
+				    </div>
+				  </div>
+				</div>
+
+
+							<br>
+							<small class="card-subtittle">{{ note.Note.created_on.strftime('%d-%m-%Y | %H:%M') }}</small>
+							<p class="card-text">{{ note.Note.note[0:500] }}
+							{% if (note.Note.note)|length > 500 %}
+										<a href="{{url_for('more', note_id=note.Note.id)}}">... show more</a>
+							{% endif %}
+							</p>
+							</div>
+
+						</div>
+					{% endfor %}
+					{% else %}
+					<div class="card mt-5">
+						<div class="card-body">
+							<h5 class="card-title">Note doesn't exist or wasn't created.</h5>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}

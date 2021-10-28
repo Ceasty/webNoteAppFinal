@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+Portfolio
+{% endblock %}
+{% block body %}
+
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center" style="background-color: #151515;">
+      <div class="container">
+        <img src="{{url_for('static', filename='img/jeffplant.jpg')}}" alt="" width="250"height="250" class="rounded-circle"> 
+        <h1 class="display-4" style="color: floralwhite;">Jefferson Timotius</h1>
+        <p class="lead" style="color: ghostwhite;">Students | Young | Not Bald</p>
+      </div>
+    </div>
+    <!-- End of Jumbotron -->
+    <section class="about" id="about">
+        <div class="container text-center border border-secondary mb-4">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="sub-title">Biodata :</h2>
+                    <hr>
+                </div>
+                <div class="container" >
+                    <div class="row">
+                    	<div class=" font-weight-bold col order-first text-right">
+                    		Full Name :
+                    		<hr>
+                    		Gender : <hr>
+                    		Birth : <hr>
+                    		Address : <hr>
+                    		Nationality : <hr> 
+                    		Education : <hr>
+                    		Phone/Email : <hr>
+                    	</div>
+                    	<div class=" font-weight-light col order-last text-left">
+                    		Jefferson Timotius Mansur<hr>
+                    		Male<hr>
+                    		Palembang, 28 November 2004 <hr>
+                    		Jl. Malaka IV No 15.C, Bukit Sangkal, Kalidoni, Palembang.<hr>
+                    		Indonesia <hr>
+                    		High School <hr>
+                    		+628994486022 / jeffetimotmans@gmail.com<hr>
+                    	</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+<div style="background-color: black;">
+  <div class="container">
+  	<div class="row">
+  	<div class="mt-4 jumbotron col-3 order-first"style="background-color: #FFD5D5; margin-right: 30px;">
+    <h1 class="display-5 text-center">My Project</h1>
+</div>
+    <div class="jumbotron col-3 order text-center mt-4 "style="background-color: #E7FFFC; margin-right: 30px;">
+<a href="/create" class="btn btn-success btn-lg active" role="button" aria-pressed="true">Web Note App</a></div>
+<div class="jumbotron col-3 order-last text-center mt-4 "style="background-color: #D8FDB3;">
+<button type="button" class="btn btn-danger btn-lg" >Reminder App</button>
+</div>
+  </div>
+</div>
+</div>
+</div>
+
+<a href=""></a>
+{% endblock %}
+

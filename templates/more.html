@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block title %}Note{% endblock %}
+
+{% block body %}
+
+<div class="container">
+		<div class="row mb-3">
+			<div class="col">
+				<div class="card mt-4">
+					<div class="card-body">
+								<a href="/create" class="btn btn-secondary col-1">Back</a>
+							<div class="card mt-3">
+								<div class="card-header">
+									<div class="row">
+									<div class="col mt-2">
+										<strong>{{note.title}}</strong>
+										</div>
+										<div class="col text-right">
+									<a class="btn btn-primary" href="{{url_for('edit', note_id=note.id)}}">Edit</a>
+									<button class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Delete</button>
+
+								</div>
+									</div>
+								</div>
+								<div class="card-body">
+									{{note.note}}
+								</div>
+							</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure to delete?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Once the file is deleted 
+        <div class="text-danger">it's not possible  recover it in any means.</div>
+        <br>
+        Click Delete button below if you are sure to delete the note.
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+        <a class="btn btn-danger" href="{{url_for('delete', note_id=note.id)}}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

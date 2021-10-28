@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}Login{% endblock title %}
+
+{% block body %}
+<section class="my-panel content">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 offset-md-4 mt-4 mb-4 border border-secondary">
+					<legend class="border-bottom mt-2">
+							Login
+						</legend>
+					<form action="{{url_for('login')}}" method="POST">
+
+				    <div class="form-group">
+    				<label class="mt-2" for="exampleFormControlInput1">Email address</label>
+   				 <input name="username" type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" required>
+ 					 </div>
+
+
+ 				{% if check_pass %}
+				<div class="form-group">
+<!-- 					<div class="form-group was-validated"> ganti warna dan logo centang --> 
+			    	<label>Password</label>
+			    	<input name="password" type="password" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+			    	<div id="validationPasswordFeedback" class="invalid-feedback">
+						    	{{pass_message}}
+					</div>
+
+			  	</div>
+			  	{% else %}
+			  			<div class="form-group">
+				    <label for="Passworde">Password</label>
+				    <input name="password" type="password" class="form-control" id="Passworde">
+				 		</div>
+
+				 {% endif %}
+				<small>Not registered? <a href="{{ url_for('register') }}">Join now.</a></small>
+			  <div class="form-group mt-2">
+				<button type="submit" class="btn btn-primary">Login</button>
+				</div>
+
+
+
+			</form>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+				
